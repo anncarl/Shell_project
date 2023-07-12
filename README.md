@@ -1,4 +1,4 @@
-# SimpleShell Project
+# A Simple Shell Project
 
 This is a SimpleShell project written in C. It imitates a basic shell that allows you to execute commands and manage processes.
 
