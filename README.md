@@ -24,6 +24,9 @@ git clone https://github.com/anncarl/simple_shell.git
 ### Compile the Code
 ```
 cd SimpleShell
+```
+then
+```
 gcc -Wall -Werror -Wextra -pedantic *.c -o simpleshell
 ```
 
