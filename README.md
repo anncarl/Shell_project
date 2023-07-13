@@ -4,7 +4,7 @@ This is a SimpleShell project written in C. It imitates a basic shell that allow
 
 ## Features
 
-- Execute commands and programs
+- Execute shell commands and programs
 - Handle basic shell functionalities (e.g., changing directories, environment variables)
 - Support for command execution in the background
 - Built-in commands (e.g., `cd`, `exit`, `ls`)
