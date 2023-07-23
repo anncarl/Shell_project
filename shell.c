@@ -13,7 +13,7 @@ static void sig_handler(int uuv)
 {
 	(void) uuv;
 	if (sig_flag == 0)
-		_puts("\n$ ");
+		_puts("\n#AnncarlNatasha$ ");
 	else
 		_puts("\n");
 }
@@ -38,7 +38,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 	if (!isatty(STDIN_FILENO))
 		is_pipe = 1;
 	if (is_pipe == 0)
-		printf("$ ");
+		printf("#AnncarlNatasha$ ");
 	sig_flag = 0;
 	while (getline(&(vars.buffer), &len_buffer, stdin) != -1)
 	{
@@ -56,8 +56,8 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		free(vars.buffer);
 		free(vars.commands);
 		sig_flag = 0;
-		if (is_pipe == 0)
-			_puts("$ ");
+i		if (is_pipe == 0)
+			_puts("#AnncarlNatasha$ ");
 		vars.buffer = NULL;
 	}
 	if (is_pipe == 0)
