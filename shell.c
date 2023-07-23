@@ -13,7 +13,7 @@ static void sig_handler(int uuv)
 {
 	(void) uuv;
 	if (sig_flag == 0)
-		_puts("\n#NatashaAnncarl-ShellProject $ ");
+		_puts("\n$ ");
 	else
 		_puts("\n");
 }
@@ -49,7 +49,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		{
 			vars.av = tokenize(vars.commands[i], "\n \t\r");
 			if (vars.av && vars.av[0])
-				if (checkbuild(&vars) == NULL)
+				if (check_for_builtins(&vars) == NULL)
 					check_for_path(&vars);
 		free(vars.av);
 		}
@@ -57,7 +57,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		free(vars.commands);
 		sig_flag = 0;
 		if (is_pipe == 0)
-			_puts("#NatashaAnncarl-ShellProject $ ");
+			_puts("$ ");
 		vars.buffer = NULL;
 	}
 	if (is_pipe == 0)
@@ -66,4 +66,3 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 	free(vars.buffer);
 	exit(vars.status);
 }
-

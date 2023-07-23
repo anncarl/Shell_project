@@ -27,7 +27,7 @@ cd SimpleShell
 ```
 then
 ```
-gcc -Wall -Werror -Wextra -pedantic *.c -o simpleshell
+gcc -Wall -Werror -Wextra -pedantic *.c -o
 ```
 
 ### Run the Shell

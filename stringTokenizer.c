@@ -64,4 +64,3 @@ char *new_strtok(char *str, const char *delim)
 	}
 	return (token_start);
 }
-

@@ -36,4 +36,3 @@ char **tokenize(char *buffer, char *delimiter)
 	}
 	return (tokens);
 }
-

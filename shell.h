@@ -41,7 +41,7 @@ typedef struct builtins
 {
 	char *name;
 	void (*f)(vars_t *);
-} builtins;
+} builtins_t;
 
 void free_env(char **env);
 char **make_env(char **env);
@@ -52,7 +52,7 @@ char *_strdup(char *strtodup);
 int _strcmpr(char *strcmp1, char *strcmp2);
 unsigned int _strlen(char *str);
 
-void (*checkbuild(vars_t *vars))(vars_t *vars);
+void (*check_for_builtins(vars_t *vars))(vars_t *vars);
 void new_exit(vars_t *vars);
 void _env(vars_t *vars);
 void new_setenv(vars_t *vars);
