@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * _realloc - reallocates a pointer to double the space
- * @ptr: pointer to the old array
- * @size: pointer to number of elements in the old array
+ * _realloc - this reallocates a pointer to double the space
+ * @ptr: a pointer to the old array
+ * @size: the pointer to number of elements in the old array
  *
- * Return: pointer to the new array
+ * Return: the pointer to the new array
  */
 char **_realloc(char **ptr, size_t *size)
 {
