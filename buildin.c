@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * check_for_builtins - checks if the command is a builtin
- * @vars: variables
- * Return: pointer to the function or NULL
+ * check_for_builtins  this checks if the command is a builtin
+ * @vars: the variables
+ * Return: this is a pointer to the functions or NULL
  */
 void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 {
@@ -27,8 +27,8 @@ void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 }
 
 /**
- * new_exit - exit program
- * @vars: variables
+ * new_exit - it exits the programs
+ * @vars: these are the variables
  * Return: void
  */
 void new_exit(vars_t *vars)
@@ -58,8 +58,8 @@ void new_exit(vars_t *vars)
 }
 
 /**
- * _env - prints the current environment
- * @vars: struct of variables
+ * _env - this will print out the current environment
+ * @vars: the structure of the variables
  * Return: void.
  */
 void _env(vars_t *vars)
@@ -75,7 +75,7 @@ void _env(vars_t *vars)
 }
 
 /**
- * new_setenv - create a new environment variable, or edit an existing variable
+ * new_setenv - this creates a new environment variable, or even edit an existing variable
  * @vars: pointer to struct of variables
  *
  * Return: void
