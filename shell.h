@@ -12,14 +12,14 @@
 #include <signal.h>
 
 /**
- * struct variables - variables
- * @av: command line arguments
- * @buffer: buffer of command
- * @env: environment variables
- * @count: count of commands entered
- * @argv: arguments at opening of shell
- * @status: exit status
- * @commands: commands to execute
+ * struct variables -the  variables
+ * @av: the command line arguments
+ * @buffer: the buffer of command
+ * @env: the environment variables
+ * @count: the count of commands entered
+ * @argv: the arguments at opening of shell
+ * @status: the exit status
+ * @commands: the commands to execute
  */
 typedef struct variables
 {
@@ -33,9 +33,9 @@ typedef struct variables
 } vars_t;
 
 /**
- * struct builtins - struct for the builtin functions
- * @name: name of builtin command
- * @f: function for corresponding builtin
+ * struct builtins - the struct for the builtin functions
+ * @name: the name of builtin command
+ * @f: the function for corresponding builtin
  */
 typedef struct builtins
 {
