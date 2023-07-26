@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * path_execute - executes a command in the path
- * @command: full path to the command
- * @vars: pointer to struct of variables
+ * path_execute - this executes a command in the path
+ * @command: the full path to the command
+ * @vars: the pointer to struct of variables
  *
- * Return: 0 on succcess, 1 on failure
+ * Return: it will return 0 on succcess and 1 on failure
  */
 int path_execute(char *command, vars_t *vars)
 {
@@ -42,10 +42,10 @@ int path_execute(char *command, vars_t *vars)
 }
 
 /**
- * find_path - finds the PATH variable
- * @env: array of environment variables
+ * find_path - this finds the PATH variable
+ * @env: an array of environment variables
  *
- * Return: pointer to the node that contains the PATH, or NULL on failure
+ * Return: the pointer to the node that contains the PATH, or NULL on failure
  */
 char *find_path(char **env)
 {
@@ -65,8 +65,8 @@ char *find_path(char **env)
 }
 
 /**
- * check_for_path - checks if the command is in the PATH
- * @vars: variables
+ * check_for_path - this checks if the command is in the PATH
+ * @vars: the variables
  *
  * Return: void
  */
@@ -115,10 +115,10 @@ void check_for_path(vars_t *vars)
 }
 
 /**
- * execute_cwd - executes the command in the current working directory
- * @vars: pointer to struct of variables
+ * execute_cwd - this executes the command in the current working directory
+ * @vars: a pointer to struct of variables
  *
- * Return: 0 on success, 1 on failure
+ * Return: it returns 0 on success and 1 on failure
  */
 int execute_cwd(vars_t *vars)
 {
@@ -162,10 +162,10 @@ int execute_cwd(vars_t *vars)
 }
 
 /**
- * check_for_dir - checks if the command is a part of a path
- * @str: command
+ * check_for_dir - this checks if the command is a part of a path
+ * @str: a command
  *
- * Return: 1 on success, 0 on failure
+ * Return: it returns 1 on success and 0 on failure
  */
 int check_for_dir(char *str)
 {
