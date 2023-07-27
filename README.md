@@ -1,53 +1,146 @@
-# A Simple Shell Project
+README.md_File
 
-This is a SimpleShell project written in C. It imitates a basic shell that allows you to execute commands and manage processes.
 
-## Features
+This file contains work/project/task details on the simple_shell team project.
 
-- Execute shell commands and programs
-- Handle basic shell functionalities (e.g., changing directories, environment variables)
-- Support for command execution in the background
-- Built-in commands (e.g., `cd`, `exit`, `ls`)
+Tasks
 
-## Getting Started
+0. Betty would be proud
 
-### Prerequisites
+Write a beautiful code that passes the Betty checks
 
-- GCC Compiler
-- Unix-like operating system (Linux, macOS)
+1. Simple shell 0.1
 
-### Clone the Repository
+Write a UNIX command line interpreter.
 
-```shell
-git clone https://github.com/anncarl/simple_shell.git 
-```
-### Compile the Code
-```
-cd SimpleShell
-```
-then
-```
-gcc -Wall -Werror -Wextra -pedantic *.c -o
-```
+Usage: simple_shell
 
-### Run the Shell
-```
-./hsh
-```
+2. Simple shell 0.2
 
-### Usage
-Once the shell is up and running, you can enter commands just like in a regular shell.
-Some examples include:
+Simple shell 0.1 +
 
-- Executing a program: ls -l
-- Changing directories: cd /path/to/directory
-- Exiting the shell: exit
+Handle command lines with arguments
 
-### Customization
-You can customize the shell by modifying the source code.
-Feel free to explore the code and add additional features or functionality according to your needs.
+3. Simple shell 0.3
 
-## Contributors
-- Anncarl Mwendwa
-- Natasha Muhanji
+Simple shell 0.2 +
 
+Handle the PATH
+fork must not be called if the command doesn’t exist
+
+4. Simple shell 0.4
+
+Simple shell 0.3 +
+
+Implement the exit built-in, that exits the shell
+Usage: exit
+You don’t have to handle any argument to the built-in exit
+
+5. Simple shell 1.0
+
+Simple shell 0.4 +
+
+Implement the env built-in, that prints the current environment
+
+6. Simple shell 0.1.1
+
+Simple shell 0.1 +
+
+Write your own getline function
+Use a buffer to read many chars at once and call the least possible the read system call
+You will need to use static variables
+You are not allowed to use getline
+You don’t have to:
+
+be able to move the cursor
+
+7. Simple shell 0.2.1
+
+Simple shell 0.2 +
+
+You are not allowed to use strtok
+
+8. Simple shell 0.4.1
+
+Simple shell 0.4 +
+
+handle arguments for the built-in exit
+Usage: exit status, where status is an integer used to exit the shell
+
+9. setenv, unsetenv
+
+Simple shell 1.0 +
+
+Implement the setenv and unsetenv builtin commands
+
+setenv
+Initialize a new environment variable, or modify an existing one
+Command syntax: setenv VARIABLE VALUE
+Should print something on stderr on failure
+unsetenv
+Remove an environment variable
+Command syntax: unsetenv VARIABLE
+Should print something on stderr on failure
+
+10. cd
+
+Simple shell 1.0 +
+
+Implement the builtin command cd:
+
+Changes the current directory of the process.
+Command syntax: cd [DIRECTORY]
+If no argument is given to cd the command must be interpreted like cd $HOME
+You have to handle the command cd -
+You have to update the environment variable PWD when you change directory
+man chdir, man getcwd
+
+11. ;
+
+Simple shell 1.0 +
+
+Handle the commands separator ;
+
+12. && and ||
+
+Simple shell 1.0 +
+
+Handle the && and || shell logical operators
+
+
+13. alias
+
+Simple shell 1.0 +
+
+Implement the alias builtin command
+Usage: alias [name[='value'] ...]
+alias: Prints a list of all aliases, one per line, in the form name='value'
+alias name [name2 ...]: Prints the aliases name, name2, etc 1 per line, in the form name='value'
+alias name='value' [...]: Defines an alias for each name whose value is given. If name is already an alias, replaces its value with value
+
+14. Variables
+
+Simple shell 1.0 +
+
+Handle variables replacement
+Handle the $? variable
+Handle the $$ variable
+
+15. Comments
+
+Simple shell 1.0 +
+
+Handle comments (#)
+
+16. File as input
+#advanced
+Simple shell 1.0 +
+
+Usage: simple_shell [filename]
+Your shell can take a file as a command line argument
+The file contains all the commands that your shell should run before exiting
+The file should contain one command per line
+In this mode, the shell should not print a prompt and should not read from stdin
+
+
+********THE_END*******

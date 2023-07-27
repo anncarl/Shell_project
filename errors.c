@@ -1,76 +1,87 @@
 #include "shell.h"
 
 /**
- * print_error -this prints error messages to standard error
- * @vars: a pointer to struct of variables
- * @msg: the message to print
+ * _eputs - printing input str.
+ * @str: str printed.
  *
- * Return: void
+ * Return: Null
  */
-void print_error(vars_t *vars, char *msg)
+void _eputs(char *str)
 {
-	char *count;
+	int k = 0;
 
-	_puts2(vars->argv[0]);
-	_puts2(": ");
-	count = _uitoa(vars->count);
-	_puts2(count);
-	free(count);
-	_puts2(": ");
-	_puts2(vars->av[0]);
-	if (msg)
+	if (!str)
+		return;
+	while (str[k] != '\0')
 	{
-		_puts2(msg);
+		_eputchar(str[k]);
+		k++;
 	}
-	else
-		perror("");
 }
 
 /**
- * _puts2 - this prints a string to standard error
- * @str: the string to print
+ * _eputchar - wrt char c to stderr
+ * @c: char to prnt
  *
- * Return: void
+ * Return: returns 1 0n success.
+ * On error, -1- rtn, errno set to appropriately.
  */
-void _puts2(char *str)
+int _eputchar(char c)
 {
-	ssize_t num, len;
+	static int k;
+	static char buf[WRITE_BUF_SIZE];
 
-	num = _strlen(str);
-	len = write(STDERR_FILENO, str, num);
-	if (len != num)
+	if (c == BUF_FLUSH || k >= WRITE_BUF_SIZE)
 	{
-		perror("Fatal Error");
-		exit(1);
+		write(2, buf, k);
+		k = 0;
 	}
-
+	if (c != BUF_FLUSH)
+		buf[k++] = c;
+	return (1);
 }
 
 /**
- * _uitoa - this converts an unsigned int to a string
- * @count: the unsigned int to convert
+ * _putfd - wrt char c to fd
+ * @c: char printed
+ * @fd: filedescriptor to wrt
  *
- * Return: a pointer to the converted string
+ * Return: returns On success 1.
+ * On error, -1-returned, errno set appropriately.
  */
-char *_uitoa(unsigned int count)
+int _putfd(char c, int fd)
 {
-	char *numstr;
-	unsigned int tmp, digits;
+	static int k;
 
-	tmp = count;
-	for (digits = 0; tmp != 0; digits++)
-		tmp /= 10;
-	numstr = malloc(sizeof(char) * (digits + 1));
-	if (numstr == NULL)
+	static char buf[WRITE_BUF_SIZE];
+
+	if (c == BUF_FLUSH || k >= WRITE_BUF_SIZE)
 	{
-		perror("Fatal Error1");
-		exit(127);
+		write(fd, buf, k);
+		k = 0;
 	}
-	numstr[digits] = '\0';
-	for (--digits; count; --digits)
-	{
-		numstr[digits] = (count % 10) + '0';
-		count /= 10;
-	}
-	return (numstr);
+	if (c != BUF_FLUSH)
+		buf[k++] = c;
+	return (1);
 }
+
+/**
+ * _putsfd - printing input str,
+ * @str: str printed
+ * @fd:filedescriptor to wrt to
+ *
+ * Return: n0 of char put
+ */
+int _putsfd(char *str, int fd)
+{
+	int k = 0;
+
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		k += _putfd(*str++, fd);
+	}
+	return (k);
+}
+
